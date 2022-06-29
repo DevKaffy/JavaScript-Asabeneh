@@ -1,0 +1,5 @@
+console.log(typeof 'Kafilat')
+console.log(typeof 'Adewumi')
+console.log(typeof 'Nigeria')
+console.log(typeof 30)
+console.log(typeof 'Ilorin')
