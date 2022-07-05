@@ -243,8 +243,8 @@ console.log(users2)
 }
 
 function signIn(){
-const email = prompt ('Enter your email address:')
-const password= prompt ('Enter your password:')
+// const email = prompt ('Enter your email address:')
+// const password= prompt ('Enter your password:')
 const userExist = users2.find(user => (user.email === email  && user.password === password))
 if(userExist){
 users2=users2.map(user=>{
