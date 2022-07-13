@@ -1,6 +1,5 @@
-import  country  from "./newCountry"
-const {count} = country
-console.log(count)
+import { count } from "./countries.js"
+
 //1. Explain the difference between forEach, map, filter, and reduce
 // forEach: is only used with arrays. It's index and array call back function are optional and it doesn't return.
 // map:It iterates and modify the array elements and also returns new array.
@@ -150,7 +149,60 @@ console.log(reduce)
 // 3. Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
 
 
-// console.log(countries_)
-function categorizeCountries (country){
-
+console.log(count)
+function categorizeCountries (countries, keyword){
+  return countries.filter((count)=> count.name.endsWith(keyword))
+  
 }
+console.log(categorizeCountries(count, 'ia'))
+console.log(categorizeCountries(count, 'land'))
+
+//4. Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
+
+// 5. Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
+function getFirstTenCountries(){
+  return count.filter((count)=>count.name.length===10)
+  
+}
+console.log(getFirstTenCountries())
+
+// 6. Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
+// function getLastTenCountries(){
+//   return count.filter((count)=>count.name.substr(-1, 10))
+  
+// }
+// console.log(getLastTenCountries())
+
+// 7. Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
+
+
+
+// Exercises: Level 3
+// 1. Use the countries information, in the data folder. Sort countries by name, by capital, by population
+// const countriesSort=count.map((count)=>count.capital.sort())
+// console.log(countriesSort)
+
+// Find the 10 most spoken languages:
+
+// //2. Your output should look like this
+// console.log(mostSpokenLanguages(countries, 10))
+// [
+// {country: 'English',count:91},
+// {country: 'French',count:45},
+// {country: 'Arabic',count:25},
+// {country: 'Spanish',count:24},
+// {country:'Russian',count:9},
+// {country:'Portuguese', count:9},
+// {country:'Dutch',count:8},
+// {country:'German',count:7},
+// {country:'Chinese',count:5},
+// {country:'Swahili',count:4}
+// ]
+
+// // Your output should look like this
+// console.log(mostSpokenLanguages(countries, 3))
+// [
+// {country: 'English',count: 91},
+// {country: 'French',count: 45},
+// {country: 'Arabic',count: 25},
+// ]```

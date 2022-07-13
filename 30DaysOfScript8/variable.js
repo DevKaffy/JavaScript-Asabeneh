@@ -221,8 +221,10 @@ function generateId(length=4){
 }
 console.log(generateId(6))
 console.log(new Date().toLocaleString())
+
+
 function signUp(name, email, password){
-        const userExist = users2.find(user => user.email === email)
+        const userExist = users2.find(user => user.email.toLowerCase() === email.toLowerCase())
         console.log(userExist)
         if(userExist){
                 console.log('account already exist, kindly sign in')
