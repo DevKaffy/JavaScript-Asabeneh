@@ -249,7 +249,7 @@ const arguments = (...args) => {
     let func = 0
     for (const element of args) {
         func = func + element
-    }
+    }Destructure and assign the elements of countries array to fin, est, sw, den, nor
     return func
 }
 console.log(arguments(1, 2, 3))
@@ -307,6 +307,15 @@ function userIdGenerator (){
 }
 console.log(userIdGenerator())
 
+// const generateId = () => {
+//     let idLength = prompt("How long is the id")
+//     let noOfId = prompt("How many line?")
+//     for(let i = 0; i < Number(noOfId); i++) {
+//     const random = Math.random().toString(36).substring(2,2+Number(idLength))
+//      console.log(random)
+//     } 
+//     } 
+//     generateId()
 // Modify the userIdGenerator function. Declare a function name userIdGeneratedByUser. 
 // It doesn’t take any parameter but it takes two inputs using prompt(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
 

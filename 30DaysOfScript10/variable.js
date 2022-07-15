@@ -1,12 +1,15 @@
-import { countries } from './countries'
+import {countries_arr} from "./countries.js"
 
 // 1. create an empty set
+
+console.log(countries_arr)
+console.log("hi")
 const goodies = new Set()
 console.log (goodies)
 
 // 2. Create a set containing 0 to 10 using loop
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-setOfNumbers = new Set()
+let setOfNumbers = new Set()
 for (const number of numbers){
     setOfNumbers.add(number)
 }
@@ -55,8 +58,24 @@ console.log(e)
 
 
 // LEVEL 3
-// How many languages are there in the countries object file.
-const setOfLanguages = new Set(languages)
-for (const language of setOfLanguages){
-    console.log(setOfLanguages)
+//1. How many languages are there in the countries object file.
+const setOfLanguages = new Set()
+console.log(setOfLanguages)
+for (const obj of countries_arr){
+    const {languages} = obj
+    languages.forEach(value => setOfLanguages.add(value))
 }
+console.log(setOfLanguages.size)
+
+// *** 2. Use the countries data to find the 10 most spoken languages:
+
+// const languages = countries_arr.reduce((acc, {languages}) => {
+
+// }, [])
+
+let allLang = countries_arr.map(({languages})=> languages).flat().reduce((acc,cur) => {   
+ acc[cur] ? acc[cur] += 1 : acc[cur] = 1
+ return acc
+}, {})
+allLang = Object.entries(allLang).sort((a,b) => b[1]-a[1]).map(value => ({"Language": value[0], "count": value[1]})).slice(0, 10)
+console.log(allLang)
