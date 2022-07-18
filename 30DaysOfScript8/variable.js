@@ -193,7 +193,7 @@ console.log(personAccount)
     likes: []
   },
   {
-    _id: 'aegfal',
+    _id: 'aegfal',Explanation
     name: 'Laptop',
     description: 'MacPro: System Darwin',
     price: 2500,
