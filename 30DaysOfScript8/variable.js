@@ -300,9 +300,6 @@ function rateProduct(){
 }
 
 // b. Create a function called averageRating which calculate the average rating of a product
-function averageRating(){
-
-}
 
 // Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
 function likeProduct(){
