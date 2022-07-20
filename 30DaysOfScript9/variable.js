@@ -1,5 +1,5 @@
 import { count } from "./countries.js"
-
+console.log(count)
 //1. Explain the difference between forEach, map, filter, and reduce
 // forEach: is only used with arrays. It's index and array call back function are optional and it doesn't return.
 // map:It iterates and modify the array elements and also returns new array.
@@ -174,13 +174,19 @@ console.log(getFirstTenCountries())
 // console.log(getLastTenCountries())
 
 // 7. Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
-
-
+let manyInitial = count.reduce((acc, {name})=>{
+  const firstLetter = name[0]
+  acc[firstLetter] = acc[firstLetter] + 1 || 1
+return acc
+}, {})
+manyInitial = Object.entries(manyInitial).sort((a,b)=> b[1]-a[1])[0][0]
+console.log(manyInitial)
 
 // Exercises: Level 3
 // 1. Use the countries information, in the data folder. Sort countries by name, by capital, by population
-// const countriesSort=count.map((count)=>count.capital.sort())
+// const countriesSort=count.map((count)=>count.sort())
 // console.log(countriesSort)
+
 
 // Find the 10 most spoken languages:
 
