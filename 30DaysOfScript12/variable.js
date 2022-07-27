@@ -5,12 +5,9 @@ const monthlySalary = 'He earns 4000 euro from salary per month, 10000 euro annu
 const pattern =  /\d+/g
 const matches = monthlySalary.match(pattern)
 console.log(matches)
-const annual = matches.map((value, index)=> {   
-  return index===1 ? value:Number(value*12)
-})
+const annual = matches.reduce((acc, cur, ind, arr)=> acc += ind === 0 ||ind === arr.length-1 ? Number(cur)*12 : Number(cur), 0)
 console.log(annual)
-let result = annual.reduce((acc, cur)=> acc + Number(cur), 0)
-console.log(result)
+
 
 //2. The position of some particles on the horizontal x-axis -12, -4, -3 and -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. Extract these numbers and find the distance between the two furthest particles.
 // points = ['-1', '2', '-4', '-3', '-1', '0', '4', '8']
@@ -55,15 +52,15 @@ if (typeof isValidVariable==='string'){
 // paragraph = `I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.`
 // console.log(tenMostFrequentWords(paragraph))
 
-function tenMostFrequentWords (paragraph){
-const par = /\w+/gi
-const match = paragraph.match(par)
-const frequentWords = match.reduce((acc, cur)=>{ 
-    acc[cur] = acc[cur] + 1 | 1
-}, {})
-return frequentWords
-}
-console.log(tenMostFrequentWords(`I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.`))
+// function tenMostFrequentWords (paragraph){
+// const par = /\w+/gi
+// const match = paragraph.match(par)
+// const frequentWords = match.reduce((acc, cur)=>{ 
+//     acc[cur] = acc[cur] + 1 | 1
+// }, {})
+// return frequentWords
+// }
+// console.log(tenMostFrequentWords(`I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.`))
 
 
 // LEVEL 3
