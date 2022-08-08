@@ -33,8 +33,11 @@ container.style.gridTemplateColumns = 'repeat(6, 1fr)'
 // container.style.backgroundColor = 'red'
 container.style.gridGap = '5px'
 container.style.padding = '5px'
-container.style.margin = '15px auto'
+container.style.margin = '0 auto'
 container.style.padding = '15px auto'
+container.style.maxWidth = '70%'
+// container.style.alignItems = 'center'
+// container.style.justifyItems= 'center'
 
 
 for(let i = 0; i<=countries_data.length; i++){
