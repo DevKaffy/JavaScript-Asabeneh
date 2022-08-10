@@ -43,11 +43,11 @@ container.style.padding = '5px'
             let containerChild = document.createElement('div')
             containerChild.textContent = i
             if (isPrime(i)){
-                    containerChild.style.backgroundColor = 'red'
+                    containerChild.style.backgroundColor = '#fd5e53'
                 }else if (i%2 ===0){
-                    containerChild.style.backgroundColor = 'green'
+                    containerChild.style.backgroundColor = '#21bf73'
                 }else {
-                    containerChild.style.backgroundColor = 'yellow'
+                    containerChild.style.backgroundColor = '#fddb3a'
                 }
             containerChild.style.padding= '10px 20px'
             containerChild.style.textAlign = 'center'

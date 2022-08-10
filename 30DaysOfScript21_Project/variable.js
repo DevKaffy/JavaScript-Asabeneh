@@ -69,14 +69,14 @@ titles.forEach(title => {
 })
 
 let first = document.querySelector('.first-color')
-first.style.backgroundColor = 'green'
+first.style.backgroundColor = '#21bf73'
 
 let second = document.querySelector('.second-color')
-second.style.backgroundColor = 'yellow'
+second.style.backgroundColor = '#fddb3a'
 
 let alls = document.querySelectorAll('.overall')
 alls.forEach(all => {
-    all.style.backgroundColor = 'red'
+    all.style.backgroundColor = '#fd5e53'
 })
 
 
