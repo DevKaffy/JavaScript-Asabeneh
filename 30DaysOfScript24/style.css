@@ -21,9 +21,7 @@ body {
 }
 
 h1 {
-  /* font: bold; */
   color:whitesmoke;
-  /* box-shadow: 1px 1px 1px rgba(0 0 0 0.3); */
 }
 .second-container {
   display: flex;
@@ -33,19 +31,13 @@ h1 {
   margin: 3rem auto 1rem;
 }
 
-input {
+input, select, button {
   padding: 10px;
   border-radius: 5px;
-}
-
-select {
-  padding: 10px;
-  border-radius: 5px;
+  outline: none;
 }
 
 button {
-  padding: 10px;
-  border-radius: 5px;
   background-color: gray;
 }
 
@@ -57,12 +49,9 @@ img {
 
 .flex-container {
   background-color: rgba(242, 242, 242, 0.1);
-  /* opacity: 0.5; */
-  /* height:20vh; */
   width:60vw;
   padding:2rem;
   display:flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: space-between;
 }

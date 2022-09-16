@@ -1,5 +1,7 @@
 // console.log(countries)
 // alert('Open the console and check if the countries has been loaded')
+const commentEl = document.querySelector(".comment")
+
 const descEl = document.querySelector(".description")
 const containerEl= document.querySelector("#container");
 const planetImage =document.getElementById('planet-image')
@@ -8,33 +10,34 @@ const selectEl =document.querySelector('select')
 const input = document.querySelector('input')
 const button = document.querySelector('button')
 
-if(!descEl.textContent) {
-    containerEl.removeChild(descEl);
-    containerEl.style.justifyContent ="center"
-}
 
 const planets =[
     {
         name:"jupiter",
-        gravity: 23.7,
+        gravity: 24.79,
         img:"jupiter.png"
 
     },
     {
         name:"pluto",
-        gravity: 0.7,
+        gravity: 0.58,
         img:"pluto.png"
 
     },
     {
+        name: "mercury",
+        gravity: 3.7,
+        img: "mercury.png"
+    },
+    {
         name:"Venus",
-        gravity: 8.9,
+        gravity: 8.87,
         img:"venus.png"
 
     },
     {
         name:"mars",
-        gravity: 3.7,
+        gravity: 3.71,
         img:"mars.png"
 
     },
@@ -58,7 +61,7 @@ const planets =[
     },
     {
         name:"neptune",
-        gravity: 1.6,
+        gravity: 11.15,
         img:"neptune.png"
     },
     {
@@ -70,8 +73,31 @@ const planets =[
 
 ]
 imgEl.setAttribute("src", `./images/${planets[2].img}` )
-selectEl.addEventListener('change', () => {
-    const selectedPlanet = selectEl.value
-    planetImage.src = `./images/${selectedPlanet}.png`
+let gravity=0;
+
+selectEl.addEventListener('change', (e) => {
+    const selectedPlanet = planets.find((planet)=>planet.name.toLowerCase()===e.target.value.toLowerCase()) 
+   gravity =selectedPlanet?.gravity
 
 })
+button.addEventListener("click", ()=>{
+    if(!input.value){
+       commentEl.textContent="Mass is required"
+       return
+    }
+    if(!selectEl.value){
+        commentEl.textContent="planet is required"
+        return
+    }
+    commentEl.textContent=""
+   const result = parseInt(input.value) * gravity
+   descEl.textContent=`the mass of ${selectEl.value} is ${result}`
+})
+
+if(!descEl.textContent) {
+    containerEl.removeChild(descEl);
+    containerEl.style.justifyContent ="center"
+}
+
+// const selectedPlanet = selectEl.value
+// planetImage.src = `./images/${selectedPlanet}.png`
