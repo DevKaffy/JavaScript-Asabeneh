@@ -137,8 +137,10 @@ console.log(arrOfNos)
 const round = 'abcdefghijklmnopqrstuvwxyz1234567890'
 let str = ''
 for(let i=0; i<6; i++){
-    const round = Math.floor(Math.random()*round.length)
+    const result = Math.floor(Math.random()*round.length)
+        str += round[result]
 }
+console.log(str)
 
 
 
